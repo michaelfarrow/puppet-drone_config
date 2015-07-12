@@ -2,7 +2,7 @@ class drone_config (
 	$config_content = ''
 ) {
 
-	service { "droned":
+	service { "drone":
 		ensure => running,
 		require => Package ['drone']
 	}
@@ -11,7 +11,7 @@ class drone_config (
 		ensure => present,
 		content => $config_content,
 		require => Package ['drone'],
-		notify => Service ['droned']
+		notify => Service ['drone']
 	}
 
 }
