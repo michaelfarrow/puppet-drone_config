@@ -4,7 +4,8 @@ class drone_config (
 
 	file { "/etc/drone/drone.toml":
 		ensure => present,
-		content => $config_content
+		content => $config_content,
+		require => package['drone']
 	}
 
 }
