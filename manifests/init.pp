@@ -2,6 +2,8 @@ class drone_config (
 	$config_content = ''
 ) {
 
+	Class ['docker'] ~> Class ['drone']
+
 	service { "drone":
 		ensure => running,
 		require => Package ['drone']
